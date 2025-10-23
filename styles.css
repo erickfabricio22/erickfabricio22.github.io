@@ -49,6 +49,6 @@ main {
 
 .nav a:hover {
   background-color: #33a8a3;
-  color: white;
+  color: rgb(219, 218, 218);
   transform: scale(1.05);
 }
