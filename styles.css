@@ -1,85 +1,117 @@
-/* ===== Fondo con degradado animado ===== */
+/* ===== CONFIGURACIÓN GENERAL ===== */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Playwrite DE SAS", cursive;
-  background: linear-gradient(-45deg, #012f33, #016969, #08b2a2, #27e0d0);
-  background-size: 400% 400%;
-  animation: moverDegradado 10s ease infinite;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Press Start 2P", cursive;
+
+    
+    /* CURSOR RETRO */
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur117.cur'), auto;
 }
 
-@keyframes moverDegradado {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+@keyframes neonGrid {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
 }
 
-/* ===== Contenedor principal ===== */
+/* ===== CONTENEDOR PRINCIPAL ===== */
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 35px; /* más separación entre título y botones */
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
 }
 
-/* ===== Título ===== */
+/* ===== TÍTULO ===== */
 .titulo h1 {
-  color: white;
-  font-size: 3em;
-  margin: 0;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    font-size: 2.5em;
+    margin: 0;
+    text-shadow: 0 0 8px #0ff, 0 0 18px #0ff;
 }
 
 .titulo p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1em;
-  margin-top: 10px;
-  font-style: italic;
+    color: #bfffff;
+    font-size: 0.8em;
+    margin-top: 10px;
+    text-shadow: 0 0 6px #0ff;
 }
 
-/* ===== Navegación ===== */
+/* ===== NAVEGACIÓN ===== */
 .nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 45px; /* ← aumenta la separación vertical entre los botones */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
 }
 
-/* ===== Botones / Enlaces ===== */
+/* ===== BOTONES RETRO ===== */
 .nav a {
-  font-family: "Poppins", sans-serif;
-  text-decoration: none;
-  background-color: #ffffff;
-  color: #0b0f26;
-  padding: 14px 40px;
-  border-radius: 10px;
-  border: 2px solid transparent;
-  transition: all 0.4s ease;
-  font-size: 1em;
-  width: 200px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.9);
+    color: #003b46;
+    padding: 14px 35px;
+    border-radius: 10px;
+    border: 2px solid #00eaff;
+    transition: all 0.3s ease;
+    width: 270px;
+    text-align: center;
+
+    box-shadow: 0 0 10px #00eaff;
 }
 
-/* ===== Efecto hover ===== */
 .nav a:hover {
-  background-color: transparent;
-  color: #ffffff;
-  border-color: #ffffff;
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    background-color: #003b46;
+    color: #00eaff;
+    box-shadow: 0 0 18px #00eaff, 0 0 25px #00eaff;
+    transform: scale(1.08);
+}
+
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+
+/* Grid inferior */
+.retro-grid-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50vh;
+
+  background:
+    linear-gradient(#ff0088 2px, transparent 2px) 0 0 / 60px 60px,
+    linear-gradient(90deg, #ff0088 2px, transparent 2px) 0 0 / 60px 60px;
+
+  transform: perspective(400px) rotateX(60deg);
+  transform-origin: bottom;
+  opacity: 0.9;
+}
+
+/* Grid superior */
+.retro-grid-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50vh;
+
+  background:
+    linear-gradient(#ff0088 2px, transparent 2px) 0 0 / 60px 60px,
+    linear-gradient(90deg, #ff0088 2px, transparent 2px) 0 0 / 60px 60px;
+
+  transform: perspective(400px) rotateX(-60deg);
+  transform-origin: top;
+  opacity: 0.9;
 }
